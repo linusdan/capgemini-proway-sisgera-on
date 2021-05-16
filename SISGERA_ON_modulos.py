@@ -10,7 +10,7 @@ import time
 from datetime import datetime
 
 # Script de conexão do banco de dados
-banco = sqlite3.connect('sisgera_on.db')
+banco = sqlite3.connect('sisgera.db')
 cursor = banco.cursor()
 
 
@@ -84,26 +84,27 @@ def cadastrar_anuncio():
         
         # Inserção de dados do cadastro (comentar linhas 86 e 87 caso precisar testar a saída de dados)
         #cursor.execute("INSERT INTO sisgera VALUES('"+nome_anuncio+"','"+cliente+"','"+data_inicio+"','"+data_termino+"','"+investimento_dia+"')")
-        #banco.commit()        
+        cursor.execute("INSERT INTO sisgera VALUES('"+nome_anuncio+"','"+cliente+"','"+data_inicio+"','"+data_termino+"',"+quantidade_dias+","+dias_hora+",'"+investimento_dia+"',"+valor_total_investido+","+maxima_visualizacoes+","+maxima_cliques+","+maxima_compartilhamentos+")")
+        banco.commit()
         
         # Área de testes [Output] - Comentar linhas 90 a 106 para evitar mostrar dados desnecessários no sistema de produção
-        print()
-        print('-=' * 30)
-        print("AREA DE TESTES [OUTPUT - SEM BANCO DE DADOS]")
-        print()
-        print("Nome do anúncio: ", nome_anuncio)
-        print("Cliente: ", cliente)
-        print("Data de início do contrato: ", data_inicio)
-        print("Data de término do contrato: ", data_termino)
-        print("Dias de contrato: ", quantidade_dias)
-        print("Dias/Hora de contrato: ", dias_hora,'H')
-        print(f'Investimento do cliente por dia: (R$) {investimento_dia:,.2f}')
-        print(f'Valor total investido é de R$ {valor_total_investido:,.2f}')
-        print("Quantidade máxima de visualizações: ", int(maxima_visualizacoes))
-        print("Quantidade máxima de cliques: ", int(maxima_cliques))
-        print("Quantidade máxima de compartilhamentos: ", int(maxima_compartilhamentos))
-        print('-=' * 30)
-        print()
+        #print()
+        #print('-=' * 30)
+        #print("AREA DE TESTES [OUTPUT - SEM BANCO DE DADOS]")
+        #print()
+        #print("Nome do anúncio: ", nome_anuncio)
+        #print("Cliente: ", cliente)
+        #print("Data de início do contrato: ", data_inicio)
+        #print("Data de término do contrato: ", data_termino)
+        #print("Dias de contrato: ", quantidade_dias)
+        #print("Dias/Hora de contrato: ", dias_hora,'H')
+        #print(f'Investimento do cliente por dia: (R$) {investimento_dia:,.2f}')
+        #print(f'Valor total investido é de R$ {valor_total_investido:,.2f}')
+        #print("Quantidade máxima de visualizações: ", int(maxima_visualizacoes))
+        #print("Quantidade máxima de cliques: ", int(maxima_cliques))
+        #print("Quantidade máxima de compartilhamentos: ", int(maxima_compartilhamentos))
+        #print('-=' * 30)
+        #print()
         resposta = str(input('Deseja cadastrar outro cliente? [S/N] '))
         if resposta in 'Nn':
             print(f'Anúncios cadastrados: {len(resposta)}')
