@@ -83,8 +83,7 @@ def cadastrar_anuncio():
         maxima_compartilhamentos = valor_total_investido / 3 * 4
         
         # Inserção de dados do cadastro (comentar linhas 86 e 87 caso precisar testar a saída de dados)
-        #cursor.execute("INSERT INTO sisgera VALUES('"+nome_anuncio+"','"+cliente+"','"+data_inicio+"','"+data_termino+"','"+investimento_dia+"')")
-        cursor.execute("INSERT INTO sisgera VALUES('"+nome_anuncio+"','"+cliente+"','"+data_inicio+"','"+data_termino+"',"+quantidade_dias+","+dias_hora+",'"+investimento_dia+"',"+valor_total_investido+","+maxima_visualizacoes+","+maxima_cliques+","+maxima_compartilhamentos+")")
+        cursor.execute("INSERT INTO sisgera VALUES('"+nome_anuncio+"','"+cliente+"','"+data_inicio+"','"+data_termino+"',"+str(quantidade_dias)+","+str(dias_hora)+","+str(investimento_dia)+","+str(valor_total_investido)+","+str(maxima_visualizacoes)+","+str(maxima_cliques)+","+str(maxima_compartilhamentos)+")")
         banco.commit()
         
         # Área de testes [Output] - Comentar linhas 90 a 106 para evitar mostrar dados desnecessários no sistema de produção
