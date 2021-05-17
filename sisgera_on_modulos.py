@@ -125,4 +125,13 @@ def cadastrar_anuncio():
 
 
 def relatorio():
-    print("Paramore - No Friend.mp3")
+    while True:
+        print('-=' * 30)
+        cursor.execute("SELECT * FROM sisgera")
+        banco.commit()
+        print(cursor.fetchall())
+        print('-=' * 30)
+        resposta = str(input('Deseja efetuar outra consulta? [S/N] '))
+        if resposta in 'Nn':
+            print('Retornando ao menu...')
+            break
