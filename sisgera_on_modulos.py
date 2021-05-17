@@ -119,6 +119,7 @@ def cadastrar_anuncio():
         #print()
         resposta = str(input('Deseja cadastrar outro cliente? [S/N] '))
         if resposta in 'Nn':
+            print("Retornando ao menu... ")
             break
             return menu()
 
