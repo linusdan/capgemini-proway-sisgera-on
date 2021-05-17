@@ -85,7 +85,20 @@ def cadastrar_anuncio():
         # Inserção de dados do cadastro (comentar linhas 86 e 87 caso precisar testar a saída de dados)
         cursor.execute("INSERT INTO sisgera VALUES('"+nome_anuncio+"','"+cliente+"','"+data_inicio+"','"+data_termino+"',"+str(quantidade_dias)+","+str(dias_hora)+","+str(investimento_dia)+","+str(valor_total_investido)+","+str(maxima_visualizacoes)+","+str(maxima_cliques)+","+str(maxima_compartilhamentos)+")")
         banco.commit()
-        
+
+        # Mostra output dos dados cadastrados
+        print()
+        print('-=' * 30)
+        print("CADASTRO EFETUADO COM SUCESSO!!!")
+        print()
+        print("Nome do anúncio: ", nome_anuncio)
+        print("Cliente: ", cliente)
+        print("Data de início do contrato: ", data_inicio)
+        print("Data de término do contrato: ", data_termino)
+        print(f'Investimento do cliente por dia: (R$) {investimento_dia:,.2f}')
+        print('-=' * 30)
+        print()
+
         # Área de testes [Output] - Comentar linhas 90 a 106 para evitar mostrar dados desnecessários no sistema de produção
         #print()
         #print('-=' * 30)
