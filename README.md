@@ -13,14 +13,14 @@ O sistema após o cadastro tem a possibilidade de exibir o relatório da pessoa 
    - [Python](#Python)
    - [PIP](#PIP)
    - [SQLite3](#SQLite3)
-- [Uso](#Usage)
+- [Uso](#Uso)
 
 
 ## Estrutura
 | Arquivo | Descrição |
 | --- | --- |
 | sisgera-main.py | Arquivo principal para execução do programa pelo terminal. |
-| db-sisgera-on.py | Script para criação / conexão do banco de dados (SQLite) |
+| db-sisgera-on.py | Script para criação / conexão do banco de dados (SQLite). Para uso: Ler comentários do arquivo. |
 | sisgera_on_modulos.py | Módulo de funções do programa. |
 | sisgera.db | Banco de dados do sistema (SQLite). |  
 
@@ -125,7 +125,7 @@ Para visualização das tabelas do banco de dados pela interface gráfica, insta
 ## Uso
 #### Windows / Linux / Mac:
 
-1) Faça o download do sistema.  
+1) Faça o [**download**](https://github.com/linusdan/capgemini-proway-sisgera-on/archive/refs/heads/main.zip) do sistema.  
 
 2) Extraia a pasta do arquivo num lugar de sua preferência.  
 
@@ -139,12 +139,12 @@ Para visualização das tabelas do banco de dados pela interface gráfica, insta
  $  cd SISGERA 
 ```
 
-4.2) Execução:
+4.2) Compilação:
 ```bash
  $  python3 sisgera-main.py
 ```
 
-Ao executar, irá aparecer a tela com três opções para escolha:  
+Ao compilar, irá aparecer a tela com três opções para escolha:  
  ```bash
  1) Cadastrar anúncio
  2) Ver relatório de anúncios cadastrados
@@ -159,17 +159,21 @@ Ao executar, irá aparecer a tela com três opções para escolha:
   2) Cliente:
   3) Data de início: [DD/MM/YYYY]
   4) Data de término: [DD/MM/YYYY]
-  5) Investimento por dia:
+  5) Investimento por dia (R$):
  ```
  
  Digite os dados conforme solicitado e tecle enter.  
- Após a conclusão, será perguntado se deseja fazer outro cadastro.  
- Caso não queira, será informado a quantidade de cadastros feitos.  
+ Após a conclusão, será mostrado que o cadastro foi efetuado.
+ Será perguntado se deseja fazer outro cadastro.  
+ Caso não queira, sistema irá informar retorno ao menu principal.  
 
 **Opção 2:**
  ```bash
  Exibe o relatório de cadastro de acordo com nome do cliente ou intervalo de tempo.
- Para fazer a busca, digite nome do cliente ou data de inicio do contrato do cadastro.
+ Para fazer a busca, selecione se quer busca por nome do cliente ou data de inicio do contrato do cadastro.
+ Digite a informação selecionada e pronto! Dado exibido :)
+ Será perguntado se deseja fazer outra consulta.  
+ Caso não queira, sistema irá informar retorno ao menu principal.  
  ```
  
 **Opção 3:**
